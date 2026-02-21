@@ -21,87 +21,122 @@ Do not give generic advice. Everything you say should be grounded in what this d
 
 ---
 
-## Step 1: Intake
+## Step 1: Intake — Question 1 of 4
 
-Ask the four intake questions **one at a time**, waiting for the developer's answer before asking the next. Do not batch them. This is a conversation, not a form. Use the `AskUserQuestion` tool for each question.
+**RIGHT NOW: Call `AskUserQuestion` with exactly this configuration. Do not output any text. Do not ask the next question. Stop after the tool call and wait for the user's response.**
 
-**Questions to ask in order:**
+- header: `"Game Type"`
+- question: `"What type of game are you making? Select the closest match — add details in the notes or via Other."`
+- options:
+  - `"Action / Combat"` — FPS, melee, beat-em-up, or combat-focused
+  - `"RPG / Strategy"` — turn-based, RTS, or role-playing
+  - `"Puzzle / Narrative"` — puzzle, visual novel, or story-driven
+  - `"Idle / Casual"` — idle, mobile casual, low-input
 
-1. **What is your game?** Use `AskUserQuestion` with:
-   - header: `"Game Type"`
-   - question: `"What type of game are you making? Select the closest match — add details in the notes or via Other."`
-   - options: `"Action / Combat"` (FPS, melee, beat-em-up, or combat-focused), `"RPG / Strategy"` (turn-based, RTS, or role-playing), `"Puzzle / Narrative"` (puzzle, visual novel, or story-driven), `"Idle / Casual"` (idle, mobile casual, low-input)
+**After the user answers question 1, and only then, proceed to Step 1b.**
 
-2. **Describe your core loop.** Use `AskUserQuestion` with:
-   - header: `"Loop Depth"`
-   - question: `"Which loop timescales have you designed for so far?"`
-   - options: `"30-second only"` (moment-to-moment actions only), `"30-sec + 5-min"` (micro and mid-level loops), `"Full loop defined"` (30-sec, 5-min, and 30-min loops), `"Not sure"` (haven't thought about it in those terms)
+---
 
-3. **What is your biggest current problem?** Use `AskUserQuestion` with:
-   - header: `"Problem Area"`
-   - question: `"What's your biggest current design problem? Pick the closest category — use notes or Other to describe it."`
-   - options: `"Player retention"` (players don't return or finish), `"Combat / feel"` (actions don't feel good or fights aren't fun), `"AI / enemies"` (enemy behavior feels off or unfair), `"Pacing / boredom"` (players lose interest or say it's repetitive)
+## Step 1b: Intake — Question 2 of 4
 
-4. **What does "winning" look like for this game?** Use `AskUserQuestion` with:
-   - header: `"Success Feel"`
-   - question: `"In an ideal session, what should success feel like for the player?"`
-   - options: `"Mastery / skill"` (player earned their victory through skill), `"Discovery / wonder"` (player explored and uncovered something), `"Power / control"` (player feels dominant and unstoppable), `"Story / emotion"` (player feels moved or satisfied by the narrative)
+**Call `AskUserQuestion` now. Do not output text. Stop after the tool call and wait.**
 
-Ask question 1. Wait for the response. Then ask question 2. Wait. Continue until all four are answered.
+- header: `"Loop Depth"`
+- question: `"Which loop timescales have you designed for so far?"`
+- options:
+  - `"30-second only"` — moment-to-moment actions only
+  - `"30-sec + 5-min"` — micro and mid-level loops
+  - `"Full loop defined"` — 30-sec, 5-min, and 30-min loops
+  - `"Not sure"` — haven't thought about it in those terms
+
+**After the user answers question 2, and only then, proceed to Step 1c.**
+
+---
+
+## Step 1c: Intake — Question 3 of 4
+
+**Call `AskUserQuestion` now. Do not output text. Stop after the tool call and wait.**
+
+- header: `"Problem Area"`
+- question: `"What's your biggest current design problem? Pick the closest category — use notes or Other to describe it."`
+- options:
+  - `"Player retention"` — players don't return or finish
+  - `"Combat / feel"` — actions don't feel good or fights aren't fun
+  - `"AI / enemies"` — enemy behavior feels off or unfair
+  - `"Pacing / boredom"` — players lose interest or say it's repetitive
+
+**After the user answers question 3, and only then, proceed to Step 1d.**
+
+---
+
+## Step 1d: Intake — Question 4 of 4
+
+**Call `AskUserQuestion` now. Do not output text. Stop after the tool call and wait.**
+
+- header: `"Success Feel"`
+- question: `"In an ideal session, what should success feel like for the player?"`
+- options:
+  - `"Mastery / skill"` — player earned their victory through skill
+  - `"Discovery / wonder"` — player explored and uncovered something
+  - `"Power / control"` — player feels dominant and unstoppable
+  - `"Story / emotion"` — player feels moved or satisfied by the narrative
+
+**After the user answers question 4, proceed to Step 2.**
 
 ---
 
 ## Step 2: Domain Check
 
-Based on the intake answers, identify which design domains are relevant. Then ask targeted follow-up questions for those domains only, **one question at a time** using the `AskUserQuestion` tool — wait for the developer's answer before asking the next. Do not batch questions.
+First, silently decide which domains are relevant based on the intake answers:
+- Skip **AI / Enemy Behavior** for pure narrative or idle games
+- Skip **Combat Feel** for narrative, puzzle, or idle games
+- Skip **Puzzle Design** for pure action or idle games
+- **Player Incentives** applies to most games
+- **Engagement and Pacing** applies to sessions longer than 10 minutes
 
-**Only probe domains that are relevant to this game type.** Examples of relevance filtering:
-- Pure narrative adventure → skip combat domain
-- Idle game → skip combat and AI domains
-- Pure action game with no puzzles → skip puzzle domain
-- Multiplayer competitive game → adjust AI domain to focus on player-vs-player balance instead
+Then work through the relevant domain probes **one at a time**. The rule is the same as Step 1: **call `AskUserQuestion`, then stop and wait for the answer before calling it again.**
 
----
+**Domain probe questions (call one, stop, wait, then call the next):**
 
-**Domain probes — use `AskUserQuestion` for each, one at a time:**
+**AI / Enemy Behavior** *(skip if no non-player opponents)*
 
-**AI / Enemy Behavior** *(relevant for games with non-player opponents)*
+- header: `"AI Telegraph"`, question: `"Can players read what enemies are about to do before it happens?"`, options: `"Clearly telegraphed"` — attacks always have readable pre-signals | `"Somewhat"` — some attacks are telegraphed, others feel sudden | `"Mostly hidden"` — attacks often feel sudden or unavoidable
 
-- Use `AskUserQuestion`: header `"AI Telegraph"`, question `"Can players read what enemies are about to do before it happens?"`, options: `"Clearly telegraphed"` (attacks always have readable pre-signals), `"Somewhat"` (some attacks are telegraphed, others feel sudden), `"Mostly hidden"` (attacks often feel sudden or unavoidable)
+- header: `"Enemy Feel"`, question: `"Do enemies feel alive and purposeful, or scripted and mechanical?"`, options: `"Dynamic & alive"` — players develop strategies around enemies | `"Mixed"` — some feel purposeful, others scripted | `"Scripted & mechanical"` — players just react, no real strategy
 
-- Use `AskUserQuestion`: header `"Enemy Feel"`, question `"Do enemies feel alive and purposeful, or scripted and mechanical?"`, options: `"Dynamic & alive"` (players develop strategies around enemies), `"Mixed"` (some feel purposeful, others scripted), `"Scripted & mechanical"` (players just react, no real strategy)
+**Combat Feel** *(skip if no direct conflict mechanics)*
 
-**Combat Feel** *(relevant for games with direct conflict mechanics)*
+- header: `"Impact Feel"`, question: `"Does hitting or being hit feel satisfying and impactful?"`, options: `"Satisfying & clear"` — hits feel weighty with strong feedback | `"Somewhat"` — some feedback, but could be stronger | `"Numbers going down"` — no real sense of impact
 
-- Use `AskUserQuestion`: header `"Impact Feel"`, question `"Does hitting or being hit feel satisfying and impactful?"`, options: `"Satisfying & clear"` (hits feel weighty with strong feedback), `"Somewhat"` (some feedback, but could be stronger), `"Numbers going down"` (no real sense of impact)
+- header: `"Death Feel"`, question: `"When players die or lose a fight, does it feel fair or cheap?"`, options: `"Fair — my mistake"` — players accept deaths as their own errors | `"Mixed"` — sometimes fair, sometimes feels cheap | `"Cheap & unavoidable"` — players frequently blame the game
 
-- Use `AskUserQuestion`: header `"Death Feel"`, question `"When players die or lose a fight, does it feel fair or cheap?"`, options: `"Fair — my mistake"` (players accept deaths as their own errors), `"Mixed"` (sometimes fair, sometimes feels cheap), `"Cheap & unavoidable"` (players frequently blame the game)
-
-- Use `AskUserQuestion`: header `"Defense Mix"`, question `"Are there meaningful defensive options, or is attacking always optimal?"`, options: `"Multiple viable options"` (block, dodge, parry, counter all work), `"One dominant option"` (players always use the same defense), `"No real defense"` (best strategy is to attack first every time)
+- header: `"Defense Mix"`, question: `"Are there meaningful defensive options, or is attacking always optimal?"`, options: `"Multiple viable options"` — block, dodge, parry, counter all work | `"One dominant option"` — players always use the same defense | `"No real defense"` — best strategy is to attack first every time
 
 **Player Incentives** *(relevant for most games)*
 
-- Use `AskUserQuestion`: header `"Fun vs Efficient"`, question `"Are players doing the most fun thing, or the most efficient thing?"`, options: `"Same thing"` (fun and efficient paths align), `"Somewhat aligned"` (some divergence but not breaking the game), `"Efficiency wins"` (players sacrifice fun to optimize)
+- header: `"Fun vs Efficient"`, question: `"Are players doing the most fun thing, or the most efficient thing?"`, options: `"Same thing"` — fun and efficient paths align | `"Somewhat aligned"` — some divergence but not breaking the game | `"Efficiency wins"` — players sacrifice fun to optimize
 
-- Use `AskUserQuestion`: header `"Reward Signal"`, question `"When players do something well, does the game reward them immediately and clearly?"`, options: `"Immediate & clear"` (players know exactly what earns rewards), `"Somewhat"` (rewards exist but timing or reason isn't always obvious), `"Opaque or delayed"` (players aren't sure what earns rewards or when)
+- header: `"Reward Signal"`, question: `"When players do something well, does the game reward them immediately and clearly?"`, options: `"Immediate & clear"` — players know exactly what earns rewards | `"Somewhat"` — rewards exist but timing or reason isn't always obvious | `"Opaque or delayed"` — players aren't sure what earns rewards or when
 
-- Use `AskUserQuestion`: header `"Exploit Risk"`, question `"Is there a degenerate strategy players gravitate toward that bypasses the intended experience?"`, options: `"None found"` (no strategy clearly bypasses the intended loop), `"Minor shortcuts"` (workarounds exist but aren't dominant), `"Major exploit"` (one strategy breaks the intended game)
+- header: `"Exploit Risk"`, question: `"Is there a degenerate strategy players gravitate toward that bypasses the intended experience?"`, options: `"None found"` — no strategy clearly bypasses the intended loop | `"Minor shortcuts"` — workarounds exist but aren't dominant | `"Major exploit"` — one strategy breaks the intended game
 
-**Engagement and Pacing** *(relevant for games with sessions longer than 10 minutes)*
+**Engagement and Pacing** *(skip for sessions under 10 minutes)*
 
-- Use `AskUserQuestion`: header `"Return Hook"`, question `"Why do players come back after putting the game down?"`, options: `"Strong pull"` (players always know what draws them back), `"Moderate hook"` (some forward momentum but could be stronger), `"Unclear"` (players may not know why they'd return)
+- header: `"Return Hook"`, question: `"Why do players come back after putting the game down?"`, options: `"Strong pull"` — players always know what draws them back | `"Moderate hook"` — some forward momentum but could be stronger | `"Unclear"` — players may not know why they'd return
 
-- Use `AskUserQuestion`: header `"Freshness"`, question `"Does the game stay fresh after the first hour, or start to feel repetitive?"`, options: `"Stays fresh"` (new mechanics or content sustain interest), `"Some repetition"` (starts strong, shows repetition over time), `"Gets stale quickly"` (feels the same after the first session)
+- header: `"Freshness"`, question: `"Does the game stay fresh after the first hour, or start to feel repetitive?"`, options: `"Stays fresh"` — new mechanics or content sustain interest | `"Some repetition"` — starts strong, shows repetition over time | `"Gets stale quickly"` — feels the same after the first session
 
-- Use `AskUserQuestion`: header `"Aha Moment"`, question `"Is there a moment where players 'get it' and feel competent? When does it happen?"`, options: `"Early (< 5 min)"` (players feel competent very quickly), `"Mid (5–30 min)"` (takes some time to click), `"Late or never"` (many players never reach that feeling)
+- header: `"Aha Moment"`, question: `"Is there a moment where players 'get it' and feel competent? When does it happen?"`, options: `"Early (< 5 min)"` — players feel competent very quickly | `"Mid (5–30 min)"` — takes some time to click | `"Late or never"` — many players never reach that feeling
 
-**Puzzle Design** *(relevant for games with logic, exploration, or discovery mechanics)*
+**Puzzle Design** *(skip if no logic, exploration, or discovery mechanics)*
 
-- Use `AskUserQuestion`: header `"Solve Feel"`, question `"When players solve a puzzle, do they feel smart or lucky?"`, options: `"Feel smart"` (players solve through insight and feel clever), `"Mixed"` (sometimes insight, sometimes trial-and-error), `"Lucky / brute-force"` (players often solve without understanding why)
+- header: `"Solve Feel"`, question: `"When players solve a puzzle, do they feel smart or lucky?"`, options: `"Feel smart"` — players solve through insight and feel clever | `"Mixed"` — sometimes insight, sometimes trial-and-error | `"Lucky / brute-force"` — players often solve without understanding why
 
-- Use `AskUserQuestion`: header `"Stuck State"`, question `"When players get stuck, do they have a way forward or hit a wall?"`, options: `"Always a way forward"` (hints or logical next steps are available), `"Sometimes stuck"` (players occasionally hit a wall), `"Often walls"` (players frequently have no way to progress)
+- header: `"Stuck State"`, question: `"When players get stuck, do they have a way forward or hit a wall?"`, options: `"Always a way forward"` — hints or logical next steps are available | `"Sometimes stuck"` — players occasionally hit a wall | `"Often walls"` — players frequently have no way to progress
 
-- Use `AskUserQuestion`: header `"Misdirection"`, question `"Do players ever feel tricked or misled by your puzzle design?"`, options: `"Never tricked"` (puzzles are honest about what they test), `"Occasionally"` (some misdirection used intentionally as a mechanic), `"Often misled"` (players frequently feel deceived)
+- header: `"Misdirection"`, question: `"Do players ever feel tricked or misled by your puzzle design?"`, options: `"Never tricked"` — puzzles are honest about what they test | `"Occasionally"` — some misdirection used intentionally as a mechanic | `"Often misled"` — players frequently feel deceived
+
+**After all relevant probes are answered, proceed to Step 3.**
 
 ---
 
