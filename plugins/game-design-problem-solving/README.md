@@ -114,8 +114,10 @@ These plugins form a complete game design advisor stack:
 ## Updating
 
 ```bash
-/plugin update game-design-problem-solving@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Version
 

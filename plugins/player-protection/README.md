@@ -99,8 +99,10 @@ Don't patch the symptom — diagnose the incentive. Ask:
 ## Updating
 
 ```bash
-/plugin update player-protection@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Version
 

@@ -103,8 +103,10 @@ Start from the player experience and work backward:
 ## Updating
 
 ```bash
-/plugin update ai-rubric@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Version
 

@@ -116,8 +116,10 @@ These plugins form a complete game design advisor stack:
 ## Updating
 
 ```bash
-/plugin update ethical-engagement-design@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Version
 

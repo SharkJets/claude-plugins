@@ -27,8 +27,10 @@ When you ask Claude Code for help with puzzle design, this skill activates and e
 ## Updating
 
 ```bash
-/plugin update puzzle-design@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Usage
 

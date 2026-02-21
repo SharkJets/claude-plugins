@@ -78,8 +78,10 @@ Help me figure out what's wrong with my game's design
 ## Updating
 
 ```bash
-/plugin update gamedev-mentor@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Specialist Plugins
 

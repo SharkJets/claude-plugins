@@ -28,8 +28,10 @@ When you ask Claude Code for help with combat design, this skill activates and e
 ## Updating
 
 ```bash
-/plugin update combat-design@sharkjets
+/plugin marketplace update .
 ```
+
+
 
 ## Usage
 
