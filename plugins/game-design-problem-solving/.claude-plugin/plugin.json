@@ -1,0 +1,8 @@
+{
+  "name": "game-design-problem-solving",
+  "description": "Adds skills for diagnosing and fixing game design problems — root cause analysis, lever management, creative reframing, and playtesting methodology",
+  "version": "1.0.0",
+  "author": {
+    "name": "Skid Vis"
+  }
+}

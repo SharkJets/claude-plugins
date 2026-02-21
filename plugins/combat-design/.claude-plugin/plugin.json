@@ -1,0 +1,8 @@
+{
+  "name": "combat-design",
+  "description": "Adds skills for designing melee combat systems that feel satisfying — attack animation phases, hit stop, game feel, defensive mechanics, style scoring, and enemy telegraphs",
+  "version": "1.0.0",
+  "author": {
+    "name": "Skid Vis"
+  }
+}

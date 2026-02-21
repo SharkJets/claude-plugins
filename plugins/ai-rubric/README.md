@@ -100,6 +100,12 @@ Start from the player experience and work backward:
 /plugin install ai-rubric@sharkjets
 ```
 
+## Updating
+
+```bash
+/plugin update ai-rubric@sharkjets
+```
+
 ## Version
 
 1.0.0

@@ -1,0 +1,8 @@
+{
+  "name": "gamedev-mentor",
+  "description": "Adds skills for reviewing game codebases and consulting with developers — surfaces design problems across AI, combat, player incentives, engagement, and puzzle domains",
+  "version": "1.0.0",
+  "author": {
+    "name": "Skid Vis"
+  }
+}
