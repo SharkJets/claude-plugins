@@ -126,7 +126,12 @@ For each diagnosed problem, give a concrete recommendation. Structure each one a
 
 Close the consultation with:
 
-> For deep implementation help on [the relevant domain(s)], install the specialist plugin:
-> - `[plugin-name]@sharkjets` — [one sentence on what it adds]
+> For deep implementation help on [the relevant domain(s)], use the relevant bundled skill — no additional install needed:
+> - `/ai-design` — detailed AI behavior rubric and implementation patterns
+> - `/combat-design` — combat feel, animation phases, hit stop, and defensive mechanics
+> - `/player-protection-design` — player incentives, reward timing, and push-forward design
+> - `/ethical-engagement-design` — pacing, novelty curves, session loops, and dark pattern avoidance
+> - `/game-design-problem-solving` — root cause analysis and playtesting methodology
+> - `/puzzle-design` — catch/revelation structure, hint systems, and difficulty curves
 
-Only recommend plugins where the findings were significant. List the installation command.
+Only surface skills that are relevant to the actual findings from this consultation.

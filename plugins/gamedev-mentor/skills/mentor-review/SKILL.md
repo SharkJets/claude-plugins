@@ -157,15 +157,15 @@ List 3–5 prioritized actions. Be specific about what to change, not just what 
 
 ---
 
-### Specialist Plugin Recommendations
+### Next Steps with Specialist Skills
 
-Based on the findings, recommend which specialist plugins to install for deep implementation help:
+Based on the findings, point the developer to the relevant bundled skill for deep implementation help. Each skill is already included in this plugin — no additional install needed.
 
-- Heavy AI findings → `ai-rubric@sharkjets`
-- Heavy combat findings → `combat-design@sharkjets`
-- Heavy incentive findings → `player-protection@sharkjets`
-- Heavy engagement findings → `ethical-engagement-design@sharkjets`
-- Heavy puzzle findings → `puzzle-design@sharkjets`
-- Systemic design methodology problems → `game-design-problem-solving@sharkjets`
+- Heavy AI findings → use the `/ai-design` skill
+- Heavy combat findings → use the `/combat-design` skill
+- Heavy incentive findings → use the `/player-protection-design` skill
+- Heavy engagement findings → use the `/ethical-engagement-design` skill
+- Heavy puzzle findings → use the `/puzzle-design` skill
+- Systemic design methodology problems → use the `/game-design-problem-solving` skill
 
-Only recommend plugins that address actual findings from this review.
+Only surface skills that address actual findings from this review.

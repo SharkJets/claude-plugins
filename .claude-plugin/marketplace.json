@@ -5,74 +5,14 @@
   },
   "plugins": [
     {
-      "name": "ai-rubric",
-      "source": "./plugins/ai-rubric",
-      "description": "Adds skills to validate gamedev AI systems against a principled rubric covering enemy behaviors, NPC logic, behavior trees, dynamic difficulty, and more",
-      "version": "1.0.0",
-      "author": {
-        "name": "Skid Vis"
-      },
-      "keywords": ["gamedev", "game-ai", "ai-design", "behavior-trees", "npc", "enemy-ai"]
-    },
-    {
-      "name": "player-protection",
-      "source": "./plugins/player-protection",
-      "description": "Adds skills for designing game mechanics that align player incentives with intended gameplay",
-      "version": "1.0.0",
-      "author": {
-        "name": "Skid Vis"
-      },
-      "keywords": ["gamedev", "player-incentives", "reward-systems", "push-forward", "grading", "scoring", "difficulty"]
-    },
-    {
-      "name": "ethical-engagement-design",
-      "source": "./plugins/ethical-engagement-design",
-      "description": "Adds skills for designing player engagement through quality craft — pacing, novelty, goal structure, flow state, and dark pattern avoidance",
-      "version": "1.0.0",
-      "author": {
-        "name": "Skid Vis"
-      },
-      "keywords": ["gamedev", "engagement", "pacing", "flow-state", "progression", "dark-patterns", "difficulty"]
-    },
-    {
-      "name": "game-design-problem-solving",
-      "source": "./plugins/game-design-problem-solving",
-      "description": "Adds skills for diagnosing and fixing game design problems — root cause analysis, lever management, creative reframing, and playtesting methodology",
-      "version": "1.0.0",
-      "author": {
-        "name": "Skid Vis"
-      },
-      "keywords": ["gamedev", "game-design", "balancing", "iteration", "problem-solving", "playtesting", "difficulty"]
-    },
-    {
-      "name": "combat-design",
-      "source": "./plugins/combat-design",
-      "description": "Adds skills for designing melee combat systems that feel satisfying — attack animation phases, hit stop, game feel, defensive mechanics, style scoring, and enemy telegraphs",
-      "version": "1.0.0",
-      "author": {
-        "name": "Skid Vis"
-      },
-      "keywords": ["gamedev", "combat", "melee", "game-feel", "hit-stop", "animation", "action-games"]
-    },
-    {
-      "name": "puzzle-design",
-      "source": "./plugins/puzzle-design",
-      "description": "Adds skills for designing puzzles that make players feel smart — catch and revelation structure, misdirection, minimalism, difficulty curves, and playtesting methodology",
-      "version": "1.0.0",
-      "author": {
-        "name": "Skid Vis"
-      },
-      "keywords": ["gamedev", "puzzle", "level-design", "difficulty", "eureka", "teaching-mechanics"]
-    },
-    {
       "name": "gamedev-mentor",
       "source": "./plugins/gamedev-mentor",
-      "description": "Adds skills for reviewing game codebases and consulting with developers — surfaces design problems across AI, combat, player incentives, engagement, and puzzle domains",
-      "version": "1.0.0",
+      "description": "Complete game design skill suite — mentor review and consultation for design audits, plus specialist skills for AI behavior, combat feel, player incentives, engagement pacing, puzzle design, and design problem-solving. One install, all skills included.",
+      "version": "2.0.0",
       "author": {
         "name": "Skid Vis"
       },
-      "keywords": ["gamedev", "mentor", "review", "consultation", "design-audit", "game-design"]
+      "keywords": ["gamedev", "mentor", "review", "consultation", "design-audit", "game-design", "game-ai", "ai-design", "behavior-trees", "npc", "enemy-ai", "combat", "melee", "game-feel", "hit-stop", "animation", "action-games", "player-incentives", "reward-systems", "push-forward", "engagement", "pacing", "flow-state", "dark-patterns", "puzzle", "level-design", "balancing", "problem-solving", "playtesting"]
     }
   ]
 }

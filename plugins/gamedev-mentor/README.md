@@ -1,76 +1,10 @@
-# gamedev-mentor Plugin
+# gamedev-mentor
 
-A higher-level entry point into game design mentorship. Rather than activating when you're already working in a specific domain, this plugin surfaces design problems you may not know you have — through codebase review or structured consultation.
+Complete game design skill suite for Claude Code. One install gives you a senior game design mentor plus six specialist skills covering every major domain of game design.
 
-## Skills
-
-### mentor-review
-
-Reads your game codebase and produces a structured design audit. Identifies which design domains are relevant to your game type, reads key files, flags violations against domain principles, and delivers a report with file:line references and prioritized recommendations.
-
-**Use when:** You want an objective audit of your existing project — "what design problems does my code reveal?"
-
-**How to invoke:**
+## Install
 
 ```
-/mentor-review path/to/your/project
-```
-
-Or describe the task naturally:
-
-```
-Review my game project at src/ for design problems
-```
-
-**What it audits:**
-
-| Domain | What it looks for |
-|---|---|
-| AI Behavior | Telegraph gaps, player-favoring biases, consistency, world integration |
-| Combat Feel | Hit stop, animation phases, defensive options, enemy readability, stunlock |
-| Player Incentives | Optimal vs. intended behavior, push-forward design, reward timing |
-| Engagement & Pacing | Novelty curve, session loop structure, return motivation, dark patterns |
-| Puzzle Design | Catch-first structure, hint availability, misdirection, failure feedback |
-
-**Report format:**
-
-- Executive summary with top 3 findings
-- Domain-by-domain findings with severity (CRITICAL / NOTABLE / MINOR) and file:line references
-- Recommended next steps
-- Specialist plugin recommendations for deep implementation help
-
----
-
-### mentor-consult
-
-Runs a structured intake interview, then diagnoses your top design problems with expert analysis. No code required — works from your description of the game.
-
-**Use when:** You want guided feedback on your design without sharing code, or you're not sure what's wrong and need help figuring it out.
-
-**How to invoke:**
-
-```
-/mentor-consult
-```
-
-Or describe the need naturally:
-
-```
-Help me figure out what's wrong with my game's design
-```
-
-**How it works:**
-
-1. **Intake** — Four questions asked together: game type, core loop, biggest problem, what success feels like
-2. **Domain probes** — Targeted follow-up questions for domains relevant to your game type (skips irrelevant domains)
-3. **Diagnosis** — Top 3–5 design problems, each mapped to the principle it violates and explained in terms of player-facing impact
-4. **Recommendations** — Concrete, specific actions with real-game examples; closes with specialist plugin suggestions
-
----
-
-## Installation
-
-```bash
 /plugin marketplace add sharkjets/claude-plugins
 /plugin install gamedev-mentor@sharkjets
 ```
@@ -81,20 +15,77 @@ Help me figure out what's wrong with my game's design
 /plugin marketplace update .
 ```
 
+---
 
+## Skills
 
-## Specialist Plugins
+### Entry Points
 
-This plugin surfaces problems and points you toward solutions. For deep implementation help, install the relevant specialist:
+Start here if you're unsure what you need.
 
-| Plugin | Domain |
+**`/mentor-review [path/to/project]`**
+
+Reads your actual game code and audits it against design principles across all domains. Produces severity-ranked findings (CRITICAL / NOTABLE / MINOR) with file:line references and prioritized next steps.
+
+```
+/mentor-review src/
+```
+
+| Domain | What it looks for |
 |---|---|
-| `ai-rubric@sharkjets` | Enemy AI, NPC logic, behavior trees, dynamic difficulty |
-| `combat-design@sharkjets` | Melee combat, hit stop, animation phases, game feel |
-| `player-protection@sharkjets` | Player incentives, reward systems, push-forward design |
-| `ethical-engagement-design@sharkjets` | Pacing, novelty, flow state, dark pattern avoidance |
-| `puzzle-design@sharkjets` | Puzzle structure, hint systems, difficulty curves |
-| `game-design-problem-solving@sharkjets` | Root cause analysis, playtesting methodology |
+| AI Behavior | Telegraph gaps, player-favoring biases, consistency, world integration |
+| Combat Feel | Hit stop, animation phases, defensive options, enemy readability, stunlock |
+| Player Incentives | Optimal vs. intended behavior, push-forward design, reward timing |
+| Engagement & Pacing | Novelty curve, session loop structure, return motivation, dark patterns |
+| Puzzle Design | Catch-first structure, hint availability, misdirection, failure feedback |
+
+---
+
+**`/mentor-consult`**
+
+Structured interview — no code required. Diagnoses design problems through conversation. Identifies root causes, maps them to principles, gives concrete recommendations with real-game examples.
+
+```
+/mentor-consult
+```
+
+How it works:
+1. **Intake** — Four questions: game type, core loop, biggest problem, what success feels like
+2. **Domain probes** — Targeted follow-ups for relevant domains only
+3. **Diagnosis** — Top 3–5 problems mapped to violated principles and player-facing impact
+4. **Recommendations** — Specific, actionable changes with real-game examples
+
+---
+
+### Specialist Skills
+
+Use these for deep implementation guidance after the mentor identifies problem areas.
+
+**`/ai-design`**
+Enemy behaviors, NPC logic, behavior trees, dynamic difficulty, telegraphing, attacker limits, player-favoring biases.
+
+**`/combat-design`**
+Melee combat feel, attack animation phases (startup / active / recovery), hit stop, screen shake, defensive mechanics, combo structure.
+
+**`/player-protection-design`**
+Player incentives, reward timing, push-forward mechanics, optimal vs. intended strategy alignment, soft discouragement.
+
+**`/ethical-engagement-design`**
+Pacing, novelty curves, session loop structure (30s / 5min / 30min), flow state, onboarding, dark pattern avoidance.
+
+**`/game-design-problem-solving`**
+Root cause analysis, lever management, creative reframing, second-order effects, playtesting methodology.
+
+**`/puzzle-design`**
+Catch and revelation structure, hint systems, misdirection, minimalism, failure feedback, difficulty curves.
+
+---
+
+## Workflow
+
+1. Start with `/mentor-review` (if you have code) or `/mentor-consult` (if you want a conversation).
+2. The mentor identifies which domains have problems.
+3. Follow up with the relevant specialist skill for deep implementation guidance.
 
 ## Version
 

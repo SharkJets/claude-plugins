@@ -1,8 +1,0 @@
-{
-  "name": "ai-rubric",
-  "description": "Adds skills to validate gamedev AI systems against a principled rubric covering enemy behaviors, NPC logic, behavior trees, dynamic difficulty, and more",
-  "version": "1.0.0",
-  "author": {
-    "name": "Skid Vis"
-  }
-}
