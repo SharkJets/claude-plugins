@@ -2,6 +2,8 @@
 
 Complete game design skill suite for Claude Code. One install gives you a senior game design mentor plus six specialist skills covering every major domain of game design.
 
+[![What If GMTK Could Review YOUR Game? (Claude Code Plugin)](https://img.youtube.com/vi/3K6Kg4P5PqA/0.jpg)](https://www.youtube.com/watch?v=3K6Kg4P5PqA)
+
 ## Install
 
 ```
