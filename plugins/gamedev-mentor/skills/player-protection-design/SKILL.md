@@ -139,3 +139,7 @@ Usually the answer involves either push-forward mechanics (3), a scoring system 
 ### When Building Difficulty / Progression Systems
 
 Check for hard-fail traps (7) and punitive systems (2). Ensure system depth (5) matches intent. Verify that environmental responses (6) handle edge cases the player might exploit.
+
+---
+
+*Based on: [How Game Designers Protect Players From Themselves — GMTK](https://www.youtube.com/watch?v=7L8vAGGitr8)*

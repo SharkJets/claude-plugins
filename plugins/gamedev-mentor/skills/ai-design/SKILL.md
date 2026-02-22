@@ -156,3 +156,7 @@ For concrete code patterns and templates for common AI systems, read the referen
 → `references/patterns.md` — Contains implementation patterns for simultaneous attacker limiters, player habit trackers, dynamic difficulty directors, AI barks/telegraph systems, detection grace periods, and behavior tree templates.
 
 Read this file when the user needs actual code or architecture guidance, not just design advice.
+
+---
+
+*Based on: [What Makes Good AI? — GMTK](https://www.youtube.com/watch?v=9bbhJi0NBkk)*

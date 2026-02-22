@@ -190,3 +190,7 @@ Check for:
 - Defensive cost differentiation (block and dodge should spend different resources)
 - Enemy telegraph clarity (wind-up frames, audio cues)
 - Poise/super armor on enemies that should resist stunlock
+
+---
+
+*Based on: [What Makes a Good Combat System? — GMTK](https://www.youtube.com/watch?v=8X4fx-YncqA&t=3s)*

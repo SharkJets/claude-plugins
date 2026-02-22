@@ -171,3 +171,7 @@ Constraints aren't failures — they're creative forcing functions. Some of the 
 - Do NOT immediately fix. Ask "why" three times.
 - Propose the fix. Trace second-order effects.
 - Implement and retest without telling testers what changed.
+
+---
+
+*Based on: [How Game Designers Solved These 11 Problems — GMTK](https://www.youtube.com/watch?v=rJZyPdYIbZI)*

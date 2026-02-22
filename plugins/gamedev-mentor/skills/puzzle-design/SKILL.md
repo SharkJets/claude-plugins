@@ -174,3 +174,7 @@ Ask these questions:
 4. When the obvious approach fails, is the failure clearly logical? (If not, add feedback.)
 5. Is every element in this puzzle necessary? (If not, remove the extras.)
 6. Does this puzzle build on something the player already learned? (If not, they may need a bridge puzzle.)
+
+---
+
+*Based on: [What Makes a Good Puzzle? — GMTK](https://www.youtube.com/watch?v=zsjC6fa_YBg)*

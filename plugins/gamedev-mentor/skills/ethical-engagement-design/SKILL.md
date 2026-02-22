@@ -181,3 +181,7 @@ Plan the novelty cadence — what's new and when. Identify foreshadowing opportu
 ### When Reviewing Any Engagement System
 
 Run the ethics check. If a system works through FOMO, loss aversion, or sunk-cost exploitation, redesign it around intrinsic motivation instead.
+
+---
+
+*Based on: [How to Keep Players Engaged (Without Being Evil) — GMTK](https://www.youtube.com/watch?v=hbzGO_Qonu0)*

@@ -87,6 +87,19 @@ Catch and revelation structure, hint systems, misdirection, minimalism, failure 
 2. The mentor identifies which domains have problems.
 3. Follow up with the relevant specialist skill for deep implementation guidance.
 
+## Sources
+
+Skills in this plugin are informed by [Game Maker's Toolkit](https://www.youtube.com/@GMTK) (Mark Brown):
+
+| Skill | Video |
+|---|---|
+| `/player-protection-design` | [How Game Designers Protect Players From Themselves](https://www.youtube.com/watch?v=7L8vAGGitr8) |
+| `/ai-design` | [What Makes Good AI?](https://www.youtube.com/watch?v=9bbhJi0NBkk) |
+| `/combat-design` | [What Makes a Good Combat System?](https://www.youtube.com/watch?v=8X4fx-YncqA&t=3s) |
+| `/ethical-engagement-design` | [How to Keep Players Engaged (Without Being Evil)](https://www.youtube.com/watch?v=hbzGO_Qonu0) |
+| `/game-design-problem-solving` | [How Game Designers Solved These 11 Problems](https://www.youtube.com/watch?v=rJZyPdYIbZI) |
+| `/puzzle-design` | [What Makes a Good Puzzle?](https://www.youtube.com/watch?v=zsjC6fa_YBg) |
+
 ## Version
 
 1.0.0
